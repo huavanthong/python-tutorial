@@ -38,11 +38,17 @@ To run this project on server
 python manage.py runserver
 ```
 
-Open brower
+### Open brower
+To run web-admin.
 ```
 http://127.0.0.1:8000/admin
 ```
 **Note:**
 * Account:
-> admin
+> admin  
 > hvthong123
+
+To see all products in this projects
+```
+http://127.0.0.1:8000/cars/
+```
