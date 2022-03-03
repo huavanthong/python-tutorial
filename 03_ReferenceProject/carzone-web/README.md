@@ -20,6 +20,7 @@ Prepare the neccessary library for this project
 pip install django-ckeditor
 pip install django-multiselectfield
 pip install psycopg2
+python -m pip install Pillow
 ```
 
 To migrate your database to PostgreSQL
