@@ -12,7 +12,7 @@ To install Django for your PC.
 ## Getting Started
 To clone this project
 ```
-https://github.com/nhtung96/carzone-web?fbclid=IwAR2GiUtxEk9kBNniasxEqU2owWDdSnVBf6b2MRMfn2Z5jpV70oVtseICY_4
+https://github.com/nhtung96/carzone-web.git
 ```
 
 Prepare the neccessary library for this project
