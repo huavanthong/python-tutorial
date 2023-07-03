@@ -6,7 +6,7 @@ Keyword for learning:
 ```
 *** Settings ***
 Library     SeleniumLibrary
-Resource    ../Resource/resource.robot
+Resource    ./Resource/resource.robot
 
 *** Variables ***
 ${url}     http://www.newtours.demoaut.com/
