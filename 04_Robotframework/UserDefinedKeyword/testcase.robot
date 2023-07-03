@@ -6,6 +6,7 @@ Keyword for learning:
 ```
 *** Settings ***
 Library     SeleniumLibrary
+Resource    ../Resource/resource.robot
 
 *** Variables ***
 ${url}     http://www.newtours.demoaut.com/
@@ -18,11 +19,3 @@ TC1
     Log To Console    ${PageTitle}
     Input Text    name:userName    mercury
     Input Text    name:password    mercury
-
-*** Keywords ***
-launchBrowser
-    [Arguments]     ${appurl}    ${appbrowser}
-    Open Browser    ${appurl}    ${appbrowser}
-    Maximize Browser Window
-    ${title}=    Get Title
-    [Return]    ${title}
