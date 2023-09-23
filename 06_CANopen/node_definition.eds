@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eds>
+  <e>
+    <p index="1000" name="Device Type" dataType="UINT16" accessType="ro" objectType="7">
+      <pdes>Device Type</pdes>
+    </p>
+    <p index="1001" name="Error Register" dataType="UINT8" accessType="ro" objectType="7">
+      <pdes>Error Register</pdes>
+    </p>
+    <p index="1003" name="Pre-defined Error Field" dataType="UINT32" accessType="ro" objectType="7">
+      <pdes>Pre-defined Error Field</pdes>
+    </p>
+  </e>
+</eds>
