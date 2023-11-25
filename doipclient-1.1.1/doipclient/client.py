@@ -237,9 +237,10 @@ class DoIPClient:
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             # IPv4, use INADDR_ANY to listen to all interfaces for broadcasts (not multicast)
             sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
             sock.bind(("", udp_port))
 
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         if timeout is not None:
             sock.settimeout(timeout)
 
@@ -394,6 +395,9 @@ class DoIPClient:
         """
         start_time = time.time()
         data = bytearray()
+        time.sleep(1)
+        print("Check time: time.time() - start_time",  time.time() - start_time)
+
         while (time.time() - start_time) <= timeout:
             if transport == DoIPClient.TransportType.TRANSPORT_TCP:
                 response = self._tcp_parser.read_message(data)
