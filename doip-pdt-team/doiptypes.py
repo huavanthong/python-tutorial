@@ -309,6 +309,7 @@ class Message:
       array[7] = (self.payload.Length >> 0) & 0xFF
       array[8:len(array)] = self.payload.serialize()
       #Trace array
+      print("Message return array: ", array)
       return array
 def parseMessage (stream):
    # parse header

@@ -16,6 +16,7 @@ from .constants import (
 from .messages import *
 
 logger = logging.getLogger("doipclient")
+logging.basicConfig(level=logging.DEBUG)
 
 
 class Parser:
@@ -196,6 +197,13 @@ class DoIPClient:
                 raise ConnectionRefusedError(
                     f"Activation Request failed with code {result.response_code}"
                 )
+        
+        logging.info("[Init] After init, dump info: ")
+        logging.info("ecu_ip_address: %s", self._ecu_ip_address)
+        logging.info("ecu_logical_address: %d", self._ecu_logical_address)
+        logging.info("client_ip_address: %s", self._client_ip_address)
+        logging.info("client_logical_address: %d", self._client_logical_address)
+
 
     class TransportType(IntEnum):
         TRANSPORT_UDP = 1
@@ -710,6 +718,7 @@ class DoIPClient:
         message = DiagnosticMessage(
             self._client_logical_address, self._ecu_logical_address, diagnostic_payload
         )
+        
         self.send_doip_message(message)
         start_time = time.time()
         while True:
@@ -776,6 +785,11 @@ class DoIPClient:
         self._udp_sock.settimeout(A_PROCESSING_TIME)
         if self._client_ip_address is not None:
             self._udp_sock.bind((self._client_ip_address, 0))
+        
+        logger.info("Socket successfully created: Bound to %s:%d" % (
+                self._tcp_sock.getsockname()[0], self._tcp_sock.getsockname()[1]))
+        logger.info("Connection to DoIP established to ecu address %s:%d" % (
+                self._ecu_ip_address, self._tcp_port))
 
         if self._use_secure:
             if isinstance(self._use_secure, ssl.SSLContext):

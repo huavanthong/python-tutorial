@@ -1,0 +1,40 @@
+$ python send.py --targetIP=10.200.220.1 --testerIP=10.200.220.10 --targetAddress=1863 --testerAddress=1895 --verbose --route=0 --msg=1001 --msg=1003 --msg=22700d
+Using arguments: Namespace(port=13400, testerIP='10.200.220.10', targetIP='10.200.220.1', testerAddress=1895, targetAddress=1863, route=0, macrofile='', verbose=True, bare=False, msg=[['1001'], ['1003'], ['22700d']])
+[1702292917.7029834][ doip.py ]Tester:__init__
+[1702292917.7029834][ doip.py ]  port:13400
+[1702292917.7029834][ doip.py ]  host:10.200.220.10
+[1702292917.7029834][ doip.py ]  testerAddr:1895
+
+Pinging 10.200.220.10 with 32 bytes of data:
+Reply from 10.200.220.10: bytes=32 time<1ms TTL=128
+
+Ping statistics for 10.200.220.10:
+    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+[1702292917.7679844][ doip.py ]listenUDP
+[1702292917.7689846][testerBase]: TesterBase:targetIP=10.200.220.1
+[1702292917.7689846][testerBase]: TestNode:__init__
+[1702292917.7689846][testerBase]:    targetIP=10.200.220.1
+[1702292917.7699845][testerBase]:    targetAddress=1863
+[1702292917.7699845][testerBase]: U16ToByteArray: u16=1863
+[1702292917.7699845][testerBase]: U16ToByteArray: u16=1863 -> b'0747'
+[1702292917.7699845][ doip.py ]Tester:listenUDP START
+[1702292917.7699845][ doip.py ]Node:__init__
+[1702292917.7709851][ doip.py ]self.active 1
+[1702292917.7709851][testerBase]: connectWithRoute
+[1702292917.7719865][testerBase]: Tester:connectSync: try to connect to 10.200.220.1:13400
+RES:____FATAL____:Exception:[WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "D:\Jenkins\workspace\PDT_Projects\playground\Thong\test_pdt_task_vtu5hc_tmp\BITS-RF\project\testbench\libraries\doip\send.py", line 207, in 
+main
+    tester.connectWithRoute()
+  File "D:\Jenkins\workspace\PDT_Projects\playground\Thong\test_pdt_task_vtu5hc_tmp\BITS-RF\project\testbench\libraries\doip\testerBase.py", line 364, in connectWithRoute
+    self.connectSync()
+  File "D:\Jenkins\workspace\PDT_Projects\playground\Thong\test_pdt_task_vtu5hc_tmp\BITS-RF\project\testbench\libraries\doip\testerBase.py", line 210, in connectSync
+    self.socketTCP.connect((self.targetIP, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+[1702292920.8357773][testerBase]: Tester:disconnect()
+[1702292920.8357773][testerBase]: disconnect: not connected
+[1702292920.8367708][testerBase]: ExitHandler!!!_
