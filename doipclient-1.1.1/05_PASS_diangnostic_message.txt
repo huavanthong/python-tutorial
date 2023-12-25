@@ -1,0 +1,9 @@
+DEBUG:doipclient:Sending DoIP Message: Type: 0x5, Payload Size: 7, Payload: 07 67 00 00 00 00 00
+DEBUG:doipclient:Received DoIP Message. Type: 0x6, Payload Size: 13 bytes, Payload: 07 67 07 
+47 10 00 00 00 00 00 00 00 00
+DEBUG:doipclient:Sending DoIP Message: Type: 0x8001, Payload Size: 6, Payload: 07 67 07 47 10 01
+DEBUG:doipclient:Received DoIP Message. Type: 0x8002, Payload Size: 5 bytes, Payload: 07 47 07 67 00
+None
+DEBUG:doipclient:Received DoIP Message. Type: 0x8001, Payload Size: 10 bytes, Payload: 07 47 
+07 67 50 01 FD E8 01 F4
+bytearray(b'P\x01\xfd\xe8\x01\xf4')

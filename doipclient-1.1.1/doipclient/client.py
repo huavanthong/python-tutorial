@@ -14,6 +14,7 @@ from .constants import (
     LINK_LOCAL_MULTICAST_ADDRESS,
 )
 from .messages import *
+import binascii
 
 logger = logging.getLogger("doipclient")
 logging.basicConfig(level=logging.DEBUG)
@@ -603,6 +604,7 @@ class DoIPClient:
         message = RoutingActivationRequest(
             self._client_logical_address, activation_type, vm_specific=vm_specific
         )
+        # logger.info("[RequestActivation] final message: {}", str(binascii.hexlify(message)))
         self.send_doip_message(message, disable_retry=disable_retry)
         while True:
             result = self.read_doip()

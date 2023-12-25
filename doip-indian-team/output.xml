@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.9.16 on win32)" generated="20231208 17:27:42.737" rpa="false" schemaversion="4">
+<suite id="s1" name="Doip-Indian-Team" source="c:\workspace\python-tutorial\doip-indian-team">
+<suite id="s1-s1" name="DoIP Keyword Test" source="c:\workspace\python-tutorial\doip-indian-team\DoIP_Keyword_Test.robot">
+<test id="s1-s1-t1" name="CSB Doip testcase 1 for reading tuner frequency table AM" line="30">
+<kw name="DOIP CSB Testing">
+<arg>31010E9B0A</arg>
+<tag>DoIP</tag>
+<doc>This test is the sanity test for DOIP</doc>
+<kw name="DoIP Initialize" library="DoIPKeywordTest">
+<msg timestamp="20231208 17:27:43.162" level="INFO">Socket successfully created: Bound to 192.168.108.1:58375</msg>
+<msg timestamp="20231208 17:27:43.165" level="INFO">Connecting to DoIP Server at 192.168.108.1:13400... </msg>
+<msg timestamp="20231208 17:27:43.175" level="INFO">Connection to DoIP established
+</msg>
+<status status="PASS" starttime="20231208 17:27:43.145" endtime="20231208 17:27:43.176"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>DoIP Initialize PASSED</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231208 17:27:43.176" endtime="20231208 17:27:43.177"/>
+</kw>
+<kw name="DoIP Start Tester Present" library="DoIPKeywordTest">
+<arg>8</arg>
+<msg timestamp="20231208 17:27:43.179" level="INFO">DoIP SEND Diag::</msg>
+<msg timestamp="20231208 17:27:43.179" level="INFO">02FD80010000000433003E80</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Protocol Version         : 02</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Inv. Protocol Version    : FD</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Payload Type             : 8001</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Payload Type Description : Diagnostic message</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Payload Length           : 00000004</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Source Address           : 3300</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Target Address           : 3E80</msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO">Payload                  : </msg>
+<msg timestamp="20231208 17:27:43.180" level="INFO"> </msg>
+<status status="PASS" starttime="20231208 17:27:43.177" endtime="20231208 17:27:43.180"/>
+</kw>
+<kw name="DoIP Send Diag Message" library="DoIPKeywordTest">
+<var>${message}</var>
+<arg>1040</arg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">DoIP SEND ::</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">02FD0005000000050200000000</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Protocol Version         : 02</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Inv. Protocol Version    : FD</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Payload Type             : 0005</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Payload Type Description : Routing activation request</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Payload Length           : 00000005</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Source Address           : 0200</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Target Address           : None</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Payload                  : 000000</msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO"> </msg>
+<msg timestamp="20231208 17:27:43.183" level="INFO">Requesting routing activation...</msg>
+<msg timestamp="20231208 17:27:44.191" level="INFO">DoIP RECV ::</msg>
+<msg timestamp="20231208 17:27:44.191" level="INFO">02fd00060000000d02003000100000000000000000</msg>
+<msg timestamp="20231208 17:27:44.191" level="INFO">Protocol Version         : 02</msg>
+<msg timestamp="20231208 17:27:44.191" level="INFO">Inv. Protocol Version    : fd</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Payload Type             : 0006</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Payload Type Description : Routing activation response</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Payload Length           : 0000000d</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Source Address           : 0200</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Target Address           : 3000</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Payload                  : 100000000000000000</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO"> </msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Routing activated with ECU: 3000</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">0</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">DoIP SEND Diag::</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">02FD80010000000433001040</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Protocol Version         : 02</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Inv. Protocol Version    : FD</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Payload Type             : 8001</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Payload Type Description : Diagnostic message</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Payload Length           : 00000004</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Source Address           : 3300</msg>
+<msg timestamp="20231208 17:27:44.192" level="INFO">Target Address           : 1040</msg>
+<msg timestamp="20231208 17:27:44.193" level="INFO">Payload                  : </msg>
+<msg timestamp="20231208 17:27:44.193" level="INFO"> </msg>
+<msg timestamp="20231208 17:27:45.195" level="INFO">DoIP RECV ::</msg>
+<msg timestamp="20231208 17:27:45.195" level="INFO">02fd8003000000053300104003</msg>
+<msg timestamp="20231208 17:27:45.195" level="INFO">Protocol Version         : 02</msg>
+<msg timestamp="20231208 17:27:45.195" level="INFO">Inv. Protocol Version    : fd</msg>
+<msg timestamp="20231208 17:27:45.195" level="INFO">Payload Type             : 8003</msg>
+<msg timestamp="20231208 17:27:45.195" level="INFO">Payload Type Description : Diagnostic negative acknowledge</msg>
+<msg timestamp="20231208 17:27:45.196" level="INFO">Payload Length           : 00000005</msg>
+<msg timestamp="20231208 17:27:45.196" level="INFO">Source Address           : 3300</msg>
+<msg timestamp="20231208 17:27:45.196" level="INFO">Target Address           : 1040</msg>
+<msg timestamp="20231208 17:27:45.196" level="INFO">Payload                  : 03</msg>
+<msg timestamp="20231208 17:27:45.196" level="INFO"> </msg>
+<msg timestamp="20231208 17:27:45.196" level="ERROR">Received negative acknowledgement.</msg>
+<msg timestamp="20231208 17:27:45.198" level="INFO">activation response b'\x02\xfd\x00\x06\x00\x00\x00\r\x02\x000\x00\x10\x00\x00\x00\x00\x00\x00\x00\x00'
+{'0006': [{'version': '02', 'inverse_version': 'fd', 'payload_type': '0006', 'payload_length': '0000000d', 'src_addr': '0200', 'target_addr': '3000', 'payload': '100000000000000000'}]}</msg>
+<msg timestamp="20231208 17:27:45.198" level="FAIL">DOIP: Send Diag Failed</msg>
+<status status="FAIL" starttime="20231208 17:27:43.181" endtime="20231208 17:27:45.202"/>
+</kw>
+<kw name="DoIP Send Diag Message" library="DoIPKeywordTest">
+<var>${message}</var>
+<arg>${commands}</arg>
+<status status="NOT RUN" starttime="20231208 17:27:45.203" endtime="20231208 17:27:45.203"/>
+</kw>
+<kw name="DoIP Validate Diag Response" library="DoIPKeywordTest">
+<arg>${message}</arg>
+<arg>0</arg>
+<arg>3</arg>
+<arg>7101</arg>
+<doc>This api should be adapted to proper slicing of message based on the 
+required validation</doc>
+<status status="NOT RUN" starttime="20231208 17:27:45.203" endtime="20231208 17:27:45.203"/>
+</kw>
+<kw name="DoIP Stop Tester Present" library="DoIPKeywordTest">
+<status status="NOT RUN" starttime="20231208 17:27:45.203" endtime="20231208 17:27:45.203"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231208 17:27:45.203" endtime="20231208 17:27:45.203"/>
+</kw>
+<kw name="DoIP Disconnect" library="DoIPKeywordTest" type="TEARDOWN">
+<status status="PASS" starttime="20231208 17:27:45.203" endtime="20231208 17:27:47.203"/>
+</kw>
+<status status="FAIL" starttime="20231208 17:27:43.144" endtime="20231208 17:27:47.204"/>
+</kw>
+<status status="FAIL" starttime="20231208 17:27:43.142" endtime="20231208 17:27:47.205">DOIP: Send Diag Failed</status>
+</test>
+<status status="FAIL" starttime="20231208 17:27:42.782" endtime="20231208 17:27:47.206"/>
+</suite>
+<meta name="bundle_version">0.9.3.0</meta>
+<meta name="machine">HC-C-006U5</meta>
+<meta name="project">DoIP Project</meta>
+<meta name="tester">Hua Van Thong (MS/EMC51-XC)</meta>
+<meta name="testtool">Robot Framework 6.1 (Python 3.9.16 on win32)</meta>
+<meta name="version_hw"/>
+<meta name="version_sw"/>
+<meta name="version_test"/>
+<status status="FAIL" starttime="20231208 17:27:42.744" endtime="20231208 17:27:47.207"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0" unknown="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" unknown="0" id="s1" name="Doip-Indian-Team">Doip-Indian-Team</stat>
+<stat pass="0" fail="1" skip="0" unknown="0" id="s1-s1" name="DoIP Keyword Test">Doip-Indian-Team.DoIP Keyword Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231208 17:27:45.196" level="ERROR">Received negative acknowledgement.</msg>
+</errors>
+</robot>

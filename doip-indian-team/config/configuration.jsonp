@@ -1,0 +1,16 @@
+{
+   "DoIP": {
+      "DOIP_TARGET_IP" : "172.17.0.1",
+      "DOIP_TESTER_IP" : "172.17.0.20",
+      "DOIP_TARGET_LOGICAL_ADDR" : "0747",
+      "DOIP_TESTER_LOGICAL_ADDR" : "0767",
+      "DOIP_ROUTING_ACTIVATION_TYPE" : "02"
+   } ,
+   "SimulationTarget": {
+      "DOIP_TARGET_IP" : "192.168.108.1",
+      "DOIP_TESTER_IP" : "192.168.108.1",
+      "DOIP_TARGET_LOGICAL_ADDR" : "12288",
+      "DOIP_TESTER_LOGICAL_ADDR" : "3584",
+      "DOIP_ROUTING_ACTIVATION_TYPE" : "02"
+   }
+}

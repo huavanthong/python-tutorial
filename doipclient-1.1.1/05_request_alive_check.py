@@ -6,4 +6,4 @@ ip, port = address
 print(ip, port, logical_address)
 
 client = DoIPClient(ip, logical_address)
-print(client.request_alive_check)
+print(client.request_alive_check())

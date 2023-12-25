@@ -1,0 +1,14 @@
+{
+  "WelcomeString"   : "Hello... Robot Framework is running now!",
+ 
+  "Maximum_version" : "1.0.0",
+  "Minimum_version" : "0.6.0",
+ 
+  "Project"         : "DoIP Project",
+  "TargetName"      : "Simnulation",
+  "params" : {
+              "global": {
+                           "[import]" : "./configuration.jsonp"
+                        }
+             }
+}
