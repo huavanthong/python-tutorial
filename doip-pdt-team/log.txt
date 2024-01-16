@@ -1,0 +1,148 @@
+Using arguments: Namespace(port=13400, testerIP='10.200.220.10', targetIP='10.200.220.1', testerAddress=1895, targetAddress=1863, route=0, macrofile='', verbose=True, bare=False, msg=[['1001'], ['1003'], ['22700d']])
+[1705392556.1532872][ doip.py ]Tester:__init__
+[1705392556.1532872][ doip.py ]  port:13400
+[1705392556.1532872][ doip.py ]  host:10.200.220.10
+[1705392556.1542866][ doip.py ]  testerAddr:1895
+
+Pinging 10.200.220.10 with 32 bytes of data:
+Reply from 10.200.220.10: bytes=32 time<1ms TTL=128
+
+Ping statistics for 10.200.220.10:
+    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+[1705392556.2502868][ doip.py ]listenUDP
+[1705392556.2512884][testerBase]: TesterBase:targetIP=10.200.220.1
+[1705392556.2512884][ doip.py ]Tester:listenUDP START
+[1705392556.2512884][testerBase]: TestNode:__init__
+[1705392556.2512884][ doip.py ]self.active 1
+[1705392556.2512884][testerBase]:    targetIP=10.200.220.1
+[1705392556.2512884][testerBase]:    targetAddress=1863
+[1705392556.2522886][testerBase]: U16ToByteArray: u16=1863
+[1705392556.2522886][testerBase]: U16ToByteArray: u16=1863 -> b'0747'
+[1705392556.2522886][ doip.py ]Node:__init__
+[1705392556.2522886][testerBase]: connectWithRoute
+[1705392556.2522886][testerBase]: Tester:connectSync: try to connect to 10.200.220.1:13400
+[1705392556.2692847][ doip.py ]Node:routingActivationReq
+[1705392556.2692847][ doip.py ]SEND[TCP]: 10.200.220.1 >> b'02fd00050000000707670000000000'
+[1705392556.2692847][testerBase]: Tester:expectMsg:RoutingActivationResponse START
+[1705392556.2692847][testerBase]: Test::receiveMsg START timeout=4
+[1705392556.271286][testerBase]: Test::receiveMsg doipHdr=b'02fd00060000000d' payloadLen=13
+[1705392556.271286][doiptypes]: parseMessage: ProtocolVersion 2
+[1705392556.271286][doiptypes]: parseMessage: PayloadType 6
+[1705392556.271286][doiptypes]: parseMessage: Length 13
+[1705392556.271286][doiptypes]: parseMessage: Inverse OK
+[1705392556.272288][doiptypes]: parseMessage: found <class 'doiptypes.RoutingActivationResponse'>
+[1705392556.272288][testerBase]: Tester:receiveMsg:got:b'02fd00060000000d07670747100000000000000000'
+[1705392556.272288][testerBase]: Tester:expectMsg next step: got RoutingActivationResponse
+REQ  : 1001 -
+[1705392556.272288][testerBase]: sendUds: SID=0x10
+[1705392556.2732887][ doip.py ]Node:diagnosticRequest
+[1705392556.2732887][doiptypes]: parseMessage: DiagnosticMessage START
+[1705392556.2732887][ doip.py ]SEND[TCP]: 10.200.220.1 >> b'02fd800100000006076707471001'
+[1705392556.2732887][testerBase]: Tester:expectUds START
+[1705392556.2732887][testerBase]: Tester:expectUds timeLeftMs=6000
+[1705392556.2732887][testerBase]: Tester:expectMsg:None START
+[1705392556.2742856][testerBase]: Test::receiveMsg START timeout=6.0
+[1705392556.275288][testerBase]: Test::receiveMsg doipHdr=b'02fd800200000005' payloadLen=5
+[1705392556.275288][doiptypes]: parseMessage: ProtocolVersion 2
+[1705392556.2762873][doiptypes]: parseMessage: PayloadType 32770
+[1705392556.2762873][doiptypes]: parseMessage: Length 5
+[1705392556.2762873][doiptypes]: parseMessage: Inverse OK
+[1705392556.2762873][doiptypes]: parseMessage: found <class 'doiptypes.DiagnosticMessageAck'>
+[1705392556.2762873][testerBase]: Tester:receiveMsg:got:b'02fd8002000000050747076700'
+[1705392556.2762873][testerBase]: Tester:expectMsg next step: got DiagnosticMessageAck
+[1705392556.2762873][testerBase]: doipMsg.payload=0747076700
+[1705392556.2762873][testerBase]: Tester:expectUds: got DiagnosticMessageAck
+[1705392556.2772863][testerBase]: Tester:expectUds timeLeftMs=5996
+[1705392556.2772863][testerBase]: Tester:expectMsg:None START
+[1705392556.2772863][testerBase]: Test::receiveMsg START timeout=5.996
+[1705392556.279287][testerBase]: Test::receiveMsg doipHdr=b'02fd80010000000a' payloadLen=10
+[1705392556.279287][doiptypes]: parseMessage: ProtocolVersion 2
+[1705392556.2802858][doiptypes]: parseMessage: PayloadType 32769
+[1705392556.2802858][doiptypes]: parseMessage: Length 10
+[1705392556.2802858][doiptypes]: parseMessage: Inverse OK
+[1705392556.2802858][doiptypes]: parseMessage: found <class 'doiptypes.DiagnosticMessage'>
+[1705392556.2802858][doiptypes]: parseMessage: DiagnosticMessage START
+[1705392556.2802858][doiptypes]: parseMessage: DiagnosticMessage len=10
+[1705392556.2802858][testerBase]: Tester:receiveMsg:got:b'02fd80010000000a074707675001fde801f4'
+[1705392556.281285][testerBase]: Tester:expectMsg next step: got DiagnosticMessage
+[1705392556.281285][testerBase]: doipMsg.payload=074707675001fde801f4
+[1705392556.281285][testerBase]: Tester:expectUds got DiagnosticMessage
+[1705392556.281285][testerBase]: expectUds ok, got:      b'5001fde801f4'
+RES  : 5001fde801f4 - P
+REQ  : 1003 -
+[1705392556.281285][testerBase]: sendUds: SID=0x10
+[1705392556.281285][ doip.py ]Node:diagnosticRequest
+[1705392556.2822864][doiptypes]: parseMessage: DiagnosticMessage START
+[1705392556.2822864][ doip.py ]SEND[TCP]: 10.200.220.1 >> b'02fd800100000006076707471003'
+[1705392556.2822864][testerBase]: Tester:expectUds START
+[1705392556.2822864][testerBase]: Tester:expectUds timeLeftMs=6000
+[1705392556.2822864][testerBase]: Tester:expectMsg:None START
+[1705392556.2832878][testerBase]: Test::receiveMsg START timeout=6.0
+[1705392556.2842855][testerBase]: Test::receiveMsg doipHdr=b'02fd800200000005' payloadLen=5
+[1705392556.2842855][doiptypes]: parseMessage: ProtocolVersion 2
+[1705392556.2842855][doiptypes]: parseMessage: PayloadType 32770
+[1705392556.2842855][doiptypes]: parseMessage: Length 5
+[1705392556.2852914][doiptypes]: parseMessage: Inverse OK
+[1705392556.2852914][doiptypes]: parseMessage: found <class 'doiptypes.DiagnosticMessageAck'>
+[1705392556.2852914][testerBase]: Tester:receiveMsg:got:b'02fd8002000000050747076700'
+[1705392556.2852914][testerBase]: Tester:expectMsg next step: got DiagnosticMessageAck
+[1705392556.2852914][testerBase]: doipMsg.payload=0747076700
+[1705392556.2852914][testerBase]: Tester:expectUds: got DiagnosticMessageAck
+[1705392556.2852914][testerBase]: Tester:expectUds timeLeftMs=5997
+[1705392556.2852914][testerBase]: Tester:expectMsg:None START
+[1705392556.2862854][testerBase]: Test::receiveMsg START timeout=5.997
+[1705392556.288285][testerBase]: Test::receiveMsg doipHdr=b'02fd80010000000a' payloadLen=10
+[1705392556.2892854][doiptypes]: parseMessage: ProtocolVersion 2
+[1705392556.2892854][doiptypes]: parseMessage: PayloadType 32769
+[1705392556.2892854][doiptypes]: parseMessage: Length 10
+[1705392556.2892854][doiptypes]: parseMessage: Inverse OK
+[1705392556.2892854][doiptypes]: parseMessage: found <class 'doiptypes.DiagnosticMessage'>
+[1705392556.2892854][doiptypes]: parseMessage: DiagnosticMessage START
+[1705392556.2892854][doiptypes]: parseMessage: DiagnosticMessage len=10
+[1705392556.2902846][testerBase]: Tester:receiveMsg:got:b'02fd80010000000a074707675003fde801f4'
+[1705392556.2902846][testerBase]: Tester:expectMsg next step: got DiagnosticMessage
+[1705392556.2902846][testerBase]: doipMsg.payload=074707675003fde801f4
+[1705392556.2902846][testerBase]: Tester:expectUds got DiagnosticMessage
+[1705392556.2902846][testerBase]: expectUds ok, got:      b'5003fde801f4'
+RES  : 5003fde801f4 - P
+REQ  : 22700d - "p
+[1705392556.2912855][testerBase]: sendUds: SID=0x22
+[1705392556.2912855][ doip.py ]Node:diagnosticRequest
+[1705392556.2912855][doiptypes]: parseMessage: DiagnosticMessage START
+[1705392556.2912855][ doip.py ]SEND[TCP]: 10.200.220.1 >> b'02fd8001000000070767074722700d'
+[1705392556.2912855][testerBase]: Tester:expectUds START
+[1705392556.292285][testerBase]: Tester:expectUds timeLeftMs=6000
+[1705392556.292285][testerBase]: Tester:expectMsg:None START
+[1705392556.292285][testerBase]: Test::receiveMsg START timeout=6.0
+[1705392556.2932847][testerBase]: Test::receiveMsg doipHdr=b'02fd800200000005' payloadLen=5
+[1705392556.2932847][doiptypes]: parseMessage: ProtocolVersion 2
+[1705392556.2932847][doiptypes]: parseMessage: PayloadType 32770
+[1705392556.2932847][doiptypes]: parseMessage: Length 5
+[1705392556.2932847][doiptypes]: parseMessage: Inverse OK
+[1705392556.2942848][doiptypes]: parseMessage: found <class 'doiptypes.DiagnosticMessageAck'>
+[1705392556.2942848][testerBase]: Tester:receiveMsg:got:b'02fd8002000000050747076700'
+[1705392556.2942848][testerBase]: Tester:expectMsg next step: got DiagnosticMessageAck
+[1705392556.2942848][testerBase]: doipMsg.payload=0747076700
+[1705392556.2942848][testerBase]: Tester:expectUds: got DiagnosticMessageAck
+[1705392556.2942848][testerBase]: Tester:expectUds timeLeftMs=5998
+[1705392556.2942848][testerBase]: Tester:expectMsg:None START
+[1705392556.2952843][testerBase]: Test::receiveMsg START timeout=5.998
+[1705392556.2972858][testerBase]: Test::receiveMsg doipHdr=b'02fd800100000014' payloadLen=20
+[1705392556.2972858][doiptypes]: parseMessage: ProtocolVersion 2
+[1705392556.2972858][doiptypes]: parseMessage: PayloadType 32769
+[1705392556.2982848][doiptypes]: parseMessage: Length 20
+[1705392556.2982848][doiptypes]: parseMessage: Inverse OK
+[1705392556.2982848][doiptypes]: parseMessage: found <class 'doiptypes.DiagnosticMessage'>
+[1705392556.2982848][doiptypes]: parseMessage: DiagnosticMessage START
+[1705392556.2982848][doiptypes]: parseMessage: DiagnosticMessage len=20
+[1705392556.2982848][testerBase]: Tester:receiveMsg:got:b'02fd8001000000140747076762700d32303234303131362e30313033'
+[1705392556.2982848][testerBase]: Tester:expectMsg next step: got DiagnosticMessage
+[1705392556.2992866][testerBase]: doipMsg.payload=0747076762700d32303234303131362e30313033
+[1705392556.2992866][testerBase]: Tester:expectUds got DiagnosticMessage
+[1705392556.2992866][testerBase]: expectUds ok, got:      b'62700d32303234303131362e30313033'
+RES  : 62700d32303234303131362e30313033 - bp 20240116.0103
+[1705392556.2992866][testerBase]: Tester:disconnect()
+[1705392556.3002868][testerBase]: ExitHandler!!!
