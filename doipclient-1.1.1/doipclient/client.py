@@ -199,11 +199,11 @@ class DoIPClient:
                     f"Activation Request failed with code {result.response_code}"
                 )
         
-        logging.info("[Init] After init, dump info: ")
-        logging.info("ecu_ip_address: %s", self._ecu_ip_address)
-        logging.info("ecu_logical_address: %d", self._ecu_logical_address)
-        logging.info("client_ip_address: %s", self._client_ip_address)
-        logging.info("client_logical_address: %d", self._client_logical_address)
+        # logging.info("[Init] After init, dump info: ")
+        # logging.info("ecu_ip_address: %s", self._ecu_ip_address)
+        # logging.info("ecu_logical_address: %d", self._ecu_logical_address)
+        # logging.info("client_ip_address: %s", self._client_ip_address)
+        # logging.info("client_logical_address: %d", self._client_logical_address)
 
 
     class TransportType(IntEnum):
