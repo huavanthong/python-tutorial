@@ -2,17 +2,8 @@
 Library    SeleniumLibrary
 
 *** Test Cases ***
-Login with correct Username and Password
-    Open Browser    url=https://the-internet.herokuapp.com/login    browser=chrome
-    Input Text    username    tomsmith
-    Input Text    password    SuperSecretPassword!
-    Click Button     class:radius
-    Element Should Contain    id=flash    You logged into a secure area!
-    Click Link    Logout
-    Close Browser
-
 Add Tasks And Set To Complete
-    Open Browser    url=https://todomvc.com/examples/angularjs/#/    browser=chrome
+    Open Browser    url=https://todomvc.com/examples/angularjs/#/    browser=Firefox
     Input Text    class:new-todo    Complete Robot Framework Training
     Press Keys    class:new-todo    RETURN
     Input Text    class:new-todo    Write Automated Tests

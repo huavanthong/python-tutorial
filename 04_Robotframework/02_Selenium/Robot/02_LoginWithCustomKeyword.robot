@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${brower}     chrome
+${brower}     Firefox
 ${url}    https://demo.nopcommerce.com/
 
 

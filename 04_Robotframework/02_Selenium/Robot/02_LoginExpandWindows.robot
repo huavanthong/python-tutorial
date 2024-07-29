@@ -9,7 +9,7 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${url}     http://www.newtours.demoaut.com/
-${browser}    chrome
+${browser}    Firefox
 
 
 *** Test Cases ***
@@ -23,6 +23,7 @@ TC1
 launchBrowser
     [Arguments]     ${appurl}    ${appbrowser}
     Open Browser    ${appurl}    ${appbrowser}
+    # This keyword to expand the windows of brower
     Maximize Browser Window
     ${title}=    Get Title
     [Return]    ${title}
