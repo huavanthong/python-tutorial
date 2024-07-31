@@ -16,3 +16,4 @@ The user can search for flights
     Select Destination City    London
     Search For Flights
     There are available Flights
+    Pause with time    5s

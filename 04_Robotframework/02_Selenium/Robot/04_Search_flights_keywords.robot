@@ -29,3 +29,7 @@ Search For Flights
 There are available Flights
     @{flights}=  Get WebElements    css:table[class='table']>tbody tr
     Should Not Be Empty     ${flights}
+
+Pause with time
+    [Arguments]      ${second}
+    Sleep     ${second}
