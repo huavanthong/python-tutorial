@@ -26,7 +26,7 @@ Open Browser To YouTube In First Tab
 Open New Tab And Mute Video
     Execute JavaScript    window.open("${YOUTUBE_URL}", "_blank")
     ${handles}=    Get Window Handles
-    Switch Window       ${handles[2]}
+    Switch Window       ${handles[-1]}
     Mute And Play Video
 
 Mute And Play Video
