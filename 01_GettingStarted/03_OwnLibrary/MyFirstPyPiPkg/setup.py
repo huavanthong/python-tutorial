@@ -9,5 +9,9 @@ setup(
     license="MIT",
     packages=find_packages(),
     classifiers=["Python 3.9", "Gitlab Demo", "Cross Platform"],
-    python_requires='>=3.5'
+    python_requires='>=3.5',
+    entry_points={
+    'console_scripts': [
+        'start-example=MicroserviceBase.ServiceRegistry.main:main',
+    ]
 )
